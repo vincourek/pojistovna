@@ -1,0 +1,29 @@
+<section>
+    <a href="pojistovna">Zpět</a>
+    <h2>Přehled zákazníků jednatele <?= $uzivatel['jmeno'] ?> <?= $uzivatel['prijmeni'] ?></h2>
+    <a href="novyZakaznik"><button>Nový zákazník</button></a>
+</section>
+<section>
+    <table>
+
+        <thead>
+            <td>Jméno</td>
+            <td>Příjmení</td>
+            <td>Město</td>
+            <td>Věk</td>
+        </thead>
+        <?php foreach ($zakaznici as $zakaznik) : ?>
+            <tr>
+                <?php $vek = date('Y') - date('Y', strtotime($zakaznik['narozeni'])); ?>
+                <td><?= $zakaznik['jmeno_zakaznika'] ?></td>
+                <td><?= $zakaznik['prijmeni_zakaznika'] ?></td>
+                <td><?= $zakaznik['mesto'] ?></td>
+                <td><?= $vek ?> let</td>
+                <td><a href="zakaznik/<?= $zakaznik['id_zakaznika'] ?>">Detail</a></td>
+                <td><a href="editzakaznika/<?= $zakaznik['id_zakaznika'] ?>">Upravit</a></td>
+                <td><a href="zakaznik/<?= $zakaznik['id_zakaznika'] ?>">Smazat</a></td>
+                
+            </tr>
+        <?php endforeach ?>
+    </table>
+</section>

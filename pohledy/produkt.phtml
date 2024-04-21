@@ -1,0 +1,11 @@
+<section>
+    <a href="produkty">Zpět</a>
+    <div>
+        <img src=" ./img/<?= $produkt['obrazek'] ?>.png" alt="<?= $produkt['obrazek'] ?>">
+    </div>
+    <div>
+        <h2><?= $produkt['nazev'] ?></h2>
+        <p><?= $produkt['popis'] ?></p>
+        <a href="pojistit/<?= $produkt['id_produktu'] ?>">Pojistit</a>
+    </div>
+</section>

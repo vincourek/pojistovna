@@ -1,0 +1,26 @@
+<section>
+    <div class="uvod">
+        <div>
+            <h1>U nás tě připravíme na vše!</h1>
+            <p>Jsme parta zkušených <strong>manipulátorů</strong> s více než 20-ti letou praxí!</p>
+            <p>Neboj se nás kontaktovat, vše v klidu probereme a najdeme způsob jak tě zaručeně zbavit tvých úspor. k tomu všemu nám pomáha naše vytříbrné know how s garancí nejhorší ceny na trhu. Pokud se ti podaří někde najít ještě horší cenu, neváhej nám o tom říct, zaručeně ji přebijeme a navrch přidáme dalších <strong>10%</strong> ze stávací ceny!</p>
+        </div>
+        <div class="uzivatel">
+            <?php if (!isset($uzivatel)) : ?>
+                <div class="tlacitka">
+                    <a href="prihlaseni"><button class="prihlaseni">Přihlásit</button></a>
+                    <a href="registrace"><button class="prihlaseni">Registrovat</button></a>
+                </div>
+            <?php else : ?>
+            <div class="jednatel">
+                <p>jednatel <strong><?= $uzivatel['jmeno'] ?> <?= $uzivatel['prijmeni'] ?> </strong></p>
+            </div>            
+            <div class="tlacitka">
+                <a href="zakaznici"><button class="prihlaseni">Zákazníci</button></a>
+                <a href="pojisteni"><button class="prihlaseni">Pojištění</button></a>
+                <a href="produkty"><button class="prihlaseni">Produkty</button></a> 
+            </div>           
+            <?php endif ?>
+        </div>
+    </div>
+</section>

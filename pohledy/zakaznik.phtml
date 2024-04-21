@@ -1,0 +1,49 @@
+<section>
+    <a href="zakaznici">Zpět</a>
+    <div>
+        <h2>Výpis zákazníka</h2>
+        <p><?= $zakaznik['jmeno_zakaznika'] ?> <?= $zakaznik['prijmeni_zakaznika'] ?> <?= $vek = date('Y') - date('Y', strtotime($zakaznik['narozeni'])); ?> let<br />
+            <?= $zakaznik['email_zakaznika'] ?></p>
+        <h3>Adresa</h3>
+        <p><?= $zakaznik['mesto'] ?><br />
+            <?= $zakaznik['ulice'] ?> <?= $zakaznik['cp'] ?><br />
+            <?= $zakaznik['psc'] ?></p>
+        <a href="editzakaznika/<?= $zakaznik['id_zakaznika'] ?>"><button>Upravit údaje</button></a>
+        <a href="pojistit/<?= $zakaznik['id_zakaznika'] ?>"><button>Nové Pojištění</button></a>
+    </div>
+    <div>
+        <h2>Pojistky</h2>
+
+
+        <table>
+            <thead>
+                <td>Číslo pojistky</td>
+                <td>Název</td>
+                <td>Platnost od</td>
+                <td>do</td>
+                <td>Měsíčně</td>
+                <td>Jednatel</td>
+            </thead>
+            <?php foreach ($pojistky as $pojisteni) : ?>
+
+                <tr>
+                    <td>00<?= $pojisteni['id_pojisteni'] ?></td>
+                    <td><?= $pojisteni['nazev'] ?></td>
+                    <td><?= $zacatek = date('d.m.y.', strtotime($pojisteni['od'])); ?></td>
+                    <td><?= $vek = date('d.m.y.', strtotime($pojisteni['do'])); ?></td>
+                    <td><?= $pojisteni['cena'] ?>Kč</td>
+                    <td><?= $pojisteni['jmeno'] . " " . $pojisteni['prijmeni'] ?></td>
+                    <td><a href="detailpojistky/<?= $pojisteni['id_pojisteni'] ?>">Detail</a></td>
+                    <?php if ($pojisteni['id_uzivatele'] === $uzivatel['id_uzivatele'] || $uzivatel['admin'] === 1) : ?>
+                        <td><a href="editpojistky/<?= $pojisteni['id_pojisteni'] ?>">Upravit</a></td>
+                        <td><a href="zakaznik/<?= $pojisteni['id_zakaznika'] ?>/<?= $pojisteni['id_pojisteni'] ?>/odstranit">Smazat</a></td>
+                    <?php endif ?>
+                </tr>
+            <?php endforeach ?>
+        </table>
+    </div>
+</section>
+
+<section>
+
+</section>

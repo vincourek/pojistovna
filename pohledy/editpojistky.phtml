@@ -1,0 +1,40 @@
+<h2>Úprava pojištění pro <?= $pojistka['jmeno_zakaznika'] ?></h2>
+<p>Jednatel <strong><?= $pojistka['jmeno'] ?> <?= $pojistka['prijmeni'] ?></strong>
+<p>Pojišťovaný <strong><?= $pojistka['jmeno_zakaznika'] ?> <?= $pojistka['prijmeni_zakaznika'] ?></strong></p>
+
+<div style="display: flex">
+    <div>
+        <form action="editpojistky/<?= $pojistka['id_pojisteni'] ?>" method="post">
+            <input type="hidden" name="id_produktu" value="<?= $pojistka['id_produktu'] ?>">
+            <input type="hidden" name="id_uzivatele" value="<?= $pojistka['id_uzivatele'] ?>">
+            <input type="hidden" name="id_zakaznika" value="<?= $pojistka['id_zakaznika'] ?>">
+            <h3>Pojistit na období</h3>
+
+            <label for="produkt">Vyberte druh pojištění:</label>
+            <select name="id_produktu" id="id_produktu">
+                <?php foreach ($produkty as $produkt) : ?>
+                    <option value="<?= $produkt['id_produktu'] ?>" <?php if ($produkt['id_produktu'] == $pojistka['id_produktu']) : {
+                        ?> selected <?php } endif ?>><?= $produkt['nazev'] ?></option>
+                <?php endforeach; ?>
+            </select> <br />
+            <label for="od">
+                Pojistit od <br />
+
+                <input type="date" name="od" value="<?= $pojistka['od'] ?>"><br />
+            </label>
+            <label for="do">
+                Pojistit do <br />
+                <input type="date" name="do" value="<?= $pojistka['do'] ?>"><br />
+            </label>
+            <label for="cena">
+                Částka za měsíc v Kč <br />
+                <input type="number" name="cena" value="<?= $pojistka['cena'] ?>"><br />
+            </label>
+            <input type="submit" name="upravit" value="Upravit">
+        </form>
+    </div>
+    <div>
+
+    </div>
+
+</div>

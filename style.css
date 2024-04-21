@@ -1,0 +1,202 @@
+@font-face {
+    font-family: Poppins;
+    src: url(fonty/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(fonty/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+
+
+html {
+    background: #414042;
+}
+
+body {
+    background: #F9F9F9;
+    font: 14px "Poppins";
+    color: #414042;
+    min-width: fit-content;
+    margin: 0;
+    padding: 0;
+}
+
+body>header {
+    height: auto;
+    width: 100%;
+    background: #00386B;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    flex-wrap: wrap;
+}
+
+#logo {
+    height: 40px;
+    margin: auto 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url(img/happy.png) no-repeat;
+    background-size: 40px 40px;
+}
+
+#logo>* {
+    margin: 0 0 0 50px;
+}
+
+#logo h1 {
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    color: white;
+}
+
+#logo h1 span {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#logo small {
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+nav ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    padding: 0 25px;
+    margin: 0 5px;
+    font-size: 1em;
+    line-height: 4.3em;
+}
+
+nav ul a {
+    color: white;
+    padding: 5px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav ul a:hover,
+.aktivni a {
+    border-bottom: 2px solid #EF6534;
+}
+
+article {
+    padding: 50px 50px 10px 50px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.produkty {
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.sekce {
+    width: 15rem;
+    padding: 1rem;
+    margin: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 2px solid #00386B;
+    box-shadow: 3px 3px 3px #00386B;
+    border-radius: 20px;
+}
+
+.obrazek {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.obrazek img {
+    width: 5rem;
+}
+
+.navtl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navtl .prihlaseni {
+    background-color: #F9F9F9;
+    text-decoration: none;
+    border-radius: 10px;
+    line-height: 2.5em;
+
+}
+
+.navtl .prihlaseni a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.zprava {
+    text-transform:unset;
+    color: #EF6534;
+    padding: 3px;
+}
+
+.uvod {
+    display: flex;
+    
+}
+
+.uzivatel {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.uzivatel .jednatel {
+    justify-content: space-around;
+}
+.uzivatel .tlacitka {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: end;
+    align-items: end;
+}
+
+.tlacitka button {
+    background-color: #0e4171;
+    color: #F9F9F9;
+    padding: 0.5em;
+    margin: 0.3em;
+    font-size: 1.2em;
+    border-radius: 10px;
+    transform: 0.3s;
+}
+
+.tlacitka button:hover {
+    box-shadow: 5px 5px 5px #00386B;
+    background-color: #F9F9F9;
+    color: #00386B;
+}
+
+.uvod h1{
+    color: #00386B;
+    font-size: 2.5em;
+}
+
+.uvod p {
+    font-size: 1.1rem;
+
+}

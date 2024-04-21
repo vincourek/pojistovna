@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+
+<head>
+    <base href="/localhost" />
+    <meta charset="UTF-8" />
+    <title>
+        <?= $titulek ?>
+    </title>
+    <meta name="description" content="<?= $popis ?>" />
+    <meta name="keywords" content="<?= $klicova_slova ?>" />
+    <meta name="author" content="Vincourek">
+    <link rel="shortcut icon" href="img/happy.png" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+    
+    <header>
+        <div id="logo">
+                <h1>Rodinná<span>Pojišťovna</span></h1>
+                <small>Okradem vás o vše</small>
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="pojistovna">Úvod</a></li>
+                <li><a href="pojisteni">Pojištění</a></li>
+                <li><a href="kontakt">Kontakt</a></li>
+            </ul>
+            
+        </nav>
+        <div class="navtl">
+
+            <?php if (!isset($uzivatel)) : ?>
+                <a href="prihlaseni"><button class="prihlaseni">Přihlásit</button></a>
+            <?php else : ?>                
+                <p><?= $uzivatel ?> </p>
+                <a href="administrace/odhlasit"><button class="prihlaseni"> Odhlásit</button></a>
+            <?php endif ?>
+            
+        </div>
+    </header>
+
+    <br clear="both" />
+    
+    <article>
+        <?php foreach ($zpravy as $zprava): ?>
+        <p class="zprava"><?= $zprava ?></p>
+        <?php endforeach ?>
+        <?php $this->kontroler->vypisPohled(); ?>
+    </article>
+
+    <footer>
+       <a href="administrace">Administrace</a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<a href="pojistovna">Zpět</a>
+    <section>
+        <?php   $pocet = count($produkty) ?>
+
+        <h2>Můžete si vybrat z <?= $pocet ?> našich služeb.</h2>
+
+        <div class="produkty">
+            <?php foreach ($produkty as $produkt) : ?>
+            <section class="sekce">
+                <div class="obrazek">
+                    <img src="./img/<?= $produkt['obrazek'] ?>.png" alt="<?= $produkt['obrazek'] ?>" >
+                </div>
+                <div class="popis">
+                    <h2><?= $produkt['nazev'] ?></h2>
+                    <p><?= $produkt['popis'] ?></p>
+                    <p><a href="produkt/<?= $produkt['id_produktu'] ?>">Bližší informace</a></p>
+                </div>
+            </section>
+            <?php endforeach ?>
+        </div>
+        <?php if ($uzivatel['admin'] === 1) :  ?>
+            <button><a href="editor">Přidat nový produkt</a></button>
+       <?php endif ?>
+    </section>
+     
