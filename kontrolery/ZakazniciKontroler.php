@@ -10,6 +10,8 @@ class ZakazniciKontroler extends Kontroler
             'klicova_slova' => 'pojištění, pojištovna, zabespečení, zdraví,',
             'popis' => 'Pojišťovna s nejlepším pojištěním za bezkonkurenční ceny, které oceníte na cestách, ve zdraví i v nemoci, nebo třeba i při péči o mazlíčka.'
         );
+        
+        $this->overUzivatele();
 
         $spravceUzivatelu = new SpravceUzivatelu();
         if (!empty($parametry[0]) && $parametry[0] == 'odhlasit') {

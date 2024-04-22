@@ -11,7 +11,7 @@ class RegistraceKontroler extends Kontroler
                 $spravceUzivatelu->registruj($_POST['jmeno'], $_POST['prijmeni'], $_POST['email'], $_POST['heslo'], $_POST['heslo_znovu'], $_POST['rok']);
                 $spravceUzivatelu->prihlas($_POST['email'], $_POST['heslo']);
                 $this->pridejZpravu('Byl jste úspěšně zaregistrován.');
-                $this->presmeruj('administrace');
+                $this->presmeruj('pojistovna');
             } catch (ChybaUzivatele $chyba) {
                 $this->pridejZpravu($chyba->getMessage());
             }

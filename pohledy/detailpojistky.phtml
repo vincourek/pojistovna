@@ -10,6 +10,5 @@
         <h3><?= $pojistka['jmeno_zakaznika'] . " " . $pojistka['prijmeni_zakaznika'] ?></h3>
         <p>Pojištěno od: <?= $zacatek = date('d.m.y.', strtotime($pojistka['od'])) . " do " . $konec = date('d.m.y.', strtotime($pojistka['do'])) ?> Měsíční poplatek: <?= $pojistka['cena'] ?> Kč</p>
          </h3>
-    </div>
-    
+    </div>    
 </section>

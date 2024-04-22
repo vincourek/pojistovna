@@ -52,20 +52,16 @@ class PojistitKontroler extends Kontroler
 
         
         if ($_POST){
-
-           /* $klice = array('id_pojisteni', 'id_uzivatele', 'id_produktu', 'id_zakaznika', 'od', 'do', 'cena',);
-            $pojisteni = array_intersect_key($_POST, array_flip($klice));
-            // Uložení produktu do DB
-            $spravcePojisteni->pojisti($pojisteni);
-            $this->pridejZpravu('Pojištění proběhlo úspěšně.');
-            $this->presmeruj('pojisteni/' . $this->data['jmeno']);
-            */
-           $spravcePojisteni->ulozPojisteni($_POST['id_uzivatele'], $_POST['id_produktu'], $_POST['id_zakaznika'], $_POST['od'],$_POST['do'], $_POST['cena']);
-
-            $this->pridejZpravu('Pojištění bylo úspěšné!');
-            $this->presmeruj('zakaznik/'.$id);
+            try {
+                $spravcePojisteni->ulozPojisteni($_POST['id_uzivatele'], $_POST['id_produktu'], $_POST['id_zakaznika'], $_POST['od'],$_POST['do'], $_POST['cena']);
+                
+                $this->pridejZpravu('Pojištění bylo úspěšné!');
+                $this->presmeruj('zakaznik/'.$id);
+            } catch (ChybaUzivatele $chyba) {
+                $this->pridejZpravu($chyba->getMessage());
+            }
         }
-        
+               
     }
 }
         
